@@ -1,11 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
+import TaskCard from './components/TaskCard';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Week1Labs</Text>
-      <StatusBar style="auto" />
+      <Text style={styles.heading}>My Tasks</Text>
+      <TaskCard title="Finish Lab 2" done={false} />
+      <TaskCard title="Read Chapter 3" done={true} />
+      <TaskCard title="Walk the dog" done={false} />
+      <TaskCard title="Review React notes" done={false} />
     </View>
   );
 }
@@ -13,7 +16,9 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingTop: 60,
+    paddingHorizontal: 16,
+    backgroundColor: '#FFFFFF',
   },
+  heading: { fontSize: 24, fontWeight: 'bold', marginBottom: 12 },
 });
